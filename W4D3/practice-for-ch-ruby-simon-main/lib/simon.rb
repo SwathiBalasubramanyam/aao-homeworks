@@ -28,20 +28,19 @@ class Simon
 
   def show_sequence
     self.add_random_color
+    self.seq.each do |color|
+      puts color
+      sleep 0.75
+      system("clear")
+      sleep 0.25
+    end
   end
 
   def require_sequence
   end
 
   def add_random_color
-    added_color = false
-    while !added_color
-      color = COLORS.sample
-      if !self.seq.include?(color)
-        self.seq << color
-        added_color = true
-      end
-    end
+    self.seq << COLORS.shuffle[0]
   end
 
   def round_success_message

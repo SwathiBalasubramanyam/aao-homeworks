@@ -6,14 +6,14 @@ window.Game = function (xDim, yDim) {
   this.xDim = xDim;
   this.yDim = yDim;
 
-  for (let i = 0; i < Game.NUM_CIRCLES; ++i) {
+  for (let i = 0; i < 20; ++i) {
     circles.push(
       Circle.randomCircle(xDim, yDim, Game.NUM_CIRCLES)
     );
   }
 };
 
-Game.NUM_CIRCLES = 4000;
+Game.NUM_CIRCLES = 20;
 
 Game.prototype.render = function (ctx) {
   // This will empty the canvas.
